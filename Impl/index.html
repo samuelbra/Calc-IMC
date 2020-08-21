@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora de IMC</title>
+
+    <script>
+        function calcular() {
+            // 1 leitura dos dados da tela
+            let altura = document.getElementById("campoAltura").value
+            let peso = document.getElementById("campoPeso").value
+
+            console.log("altura:"+ altura)
+            console.log("Peso:"+ peso)
+            // 2 calculo do IMC
+            let imc = peso / (altura * altura)
+            console.log(imc)
+
+            // 3 classifica os resultados
+            let mensagem = ""
+            if (imc <18.5) {
+                mensagem = "abaixo do peso"          
+            } else if (imc >= 18.5 && imc <= 29.9) {
+                mensagem = "peso normal"
+            } else if (imc >= 25 && imc <= 29.9) {
+                mensagem = "sobrepeso"
+            } else if (imc >= 30 && imc <= 34.9) {
+                mensagem = "obsidade grau 1"
+            } else if (imc >= 35 && imc <= 39.9) {
+                mensagem = "obsidade grau 2"
+            } else {
+                mensagem = "obsidade grau 3"
+            }
+
+            console.log(mensagem)
+            // 4 Mostra o resultado
+            document.getElementById("resultado").innerText = mensagem
+
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <div>
+
+        <div>Calculadora de IMC</div>
+
+        <div> Altura</div>
+        <div><input id="campoAltura"></div>
+
+        <div> Peso</div>
+        <div><input id="campoPeso"></div>
+
+        <div><button onclick="calcular()">Calcular</button></div>
+
+        <div id="resultado"></div>
+
+        
+    </div>
+</body>
+
+</html>
