@@ -13,10 +13,13 @@
             let altura = document.getElementById("campoAltura").value
             let peso = document.getElementById("campoPeso").value
 
-            console.log("altura:"+ altura)
-            console.log("Peso:"+ peso)
-            // 2 calculo do IMC
-            let imc = peso / (altura * altura)
+            //Objeto que guarda os dados da pessoa 
+            let pessoa = {altura: altura, peso: peso}
+
+            console.log(pessoa)
+            //2 calculo do IMC
+           
+            let imc = pessoa.peso / (pessoa.altura * altura)
             console.log(imc)
 
             // 3 classifica os resultados
